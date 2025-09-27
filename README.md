@@ -1,95 +1,102 @@
-# projetoselenium
-📖 Descrição
-Este projeto é um script de automação desenvolvido em Python com a biblioteca Selenium. Seu objetivo é automatizar a tarefa repetitiva de acessar o Ambiente Virtual de Aprendizagem (AVA) do Unieuro, navegar até uma disciplina específica e realizar o download de um arquivo PDF pré-determinado.
+Guia de Instalação e Uso do Robô de Automação do AVA
+Olá! Este guia vai te ajudar a configurar e usar o robô que baixa arquivos do AVA Unieuro automaticamente. Siga cada passo com atenção.
 
-O robô economiza tempo e simplifica o acesso a materiais de estudo recorrentes.
+Fase 1: Instalar os Programas Necessários
+Você só precisa fazer isso uma vez.
 
-✨ Funcionalidades
-Acessa diretamente a página de login do EAD Unieuro.
+Passo 1: Instalar o Navegador Google Chrome
+Se você ainda não tem o Google Chrome no seu computador, baixe e instale-o a partir deste link:
 
-Realiza o login de forma automática com as credenciais fornecidas.
+https://www.google.com/chrome/
 
-Navega até a disciplina (sala) especificada.
+Passo 2: Instalar o Python (O Cérebro do Robô)
+O Python é a linguagem de programação que faz o robô funcionar.
 
-Localiza um arquivo PDF pelo nome e inicia o download.
+Vá para o site oficial do Python: https://www.python.org/downloads/
 
-Salva o arquivo baixado em uma pasta local downloads/.
+Clique no botão amarelo para baixar a versão mais recente para Windows.
 
-Pode ser executado de forma visível (mostrando o navegador) ou em modo headless (em segundo plano, para maior velocidade).
+Execute o instalador que você baixou. Atenção: Na primeira tela do instalador, marque a caixa que diz "Add Python to PATH" no canto inferior esquerdo. Isso é muito importante!
 
-🔧 Pré-requisitos
-Antes de começar, garanta que você tenha os seguintes itens instalados:
+Depois de marcar a caixa, clique em Install Now e siga as instruções até o final.
 
-Python 3.8 ou superior: Baixar Python
+Fase 2: Preparar a Pasta do Projeto
+Agora vamos organizar os arquivos do robô.
 
-Google Chrome: O navegador precisa estar instalado na sua máquina.
+Passo 3: Criar a Pasta Principal
 
-ChromeDriver: O driver correspondente à sua versão do Google Chrome.
+Vá para a sua Área de Trabalho (Desktop).
 
-🚀 Instalação e Configuração
-Siga os passos abaixo para preparar o ambiente e rodar o robô.
+Clique com o botão direito, vá em Novo > Pasta.
 
-1. Clone ou baixe este projeto:
+Dê à pasta o nome de Robo_AVA. Todos os nossos arquivos ficarão aqui dentro.
 
-Bash
+Passo 4: Baixar o "Motorista" do Chrome (ChromeDriver)
+Este programa permite que o Python controle o Google Chrome.
 
-# Se estiver usando Git
-git clone <url-do-repositorio>
-cd automacao_ava
-Ou simplesmente use a pasta automacao_ava que você já tem.
+Abra o Google Chrome, clique nos três pontinhos (⋮) no canto superior direito, vá em Ajuda > Sobre o Google Chrome e anote a versão do seu navegador (ex: 129.0.6666.123).
 
-2. Crie um arquivo requirements.txt:
-Na pasta do projeto, crie um arquivo chamado requirements.txt e adicione a seguinte linha:
+Acesse o site oficial do ChromeDriver: https://googlechromelabs.github.io/chrome-for-testing/
 
-selenium
-3. Instale as dependências:
-Abra o terminal na pasta do projeto e execute o comando:
+Na seção Stable, encontre a linha com a mesma versão do seu Chrome.
 
-Bash
+Clique no link do chromedriver para win64. Um arquivo .zip será baixado.
+
+Abra o arquivo .zip baixado, copie o arquivo chromedriver.exe de dentro dele e cole-o diretamente na sua pasta Robo_AVA.
+
+Passo 5: Criar o Arquivo do Robô (main.py)
+
+Abra a pasta Robo_AVA.
+
+Clique com o botão direito, vá em Novo > Documento de Texto.
+
+Renomeie o arquivo para main.py (apague o .txt do final). O Windows pode perguntar se você tem certeza; clique em "Sim".
+
+Clique com o botão direito sobre o main.py e escolha Editar (ou Abrir com > Bloco de Notas).
+
+Copie todo o código abaixo e cole-o no Bloco de Notas.
+
+Python
+
+# Insira aqui o código Python completo que eu forneci na resposta anterior.
+# O código que começa com "import os" e termina com "main()".
+# É o mesmo código que funcionou para você.
+Edite as suas informações! Altere as linhas de LOGIN, SENHA, etc., com os dados corretos.
+
+SALVE O ARQUIVO (Ctrl + S) e feche o Bloco de Notas.
+
+Passo 6: Criar o Arquivo de Dependências (requirements.txt)
+
+Na pasta Robo_AVA, crie outro Documento de Texto.
+
+Renomeie-o para requirements.txt.
+
+Abra-o com o Bloco de Notas, escreva a palavra selenium dentro dele, salve e feche.
+
+Ao final desta fase, sua pasta Robo_AVA deve conter 3 arquivos: chromedriver.exe, main.py, e requirements.txt.
+
+Fase 3: Instalação Final e Execução
+Passo 7: Abrir o Terminal na Pasta Certa
+
+Clique na barra de endereço da pasta Robo_AVA (onde aparece C:\Users\SeuNome\Desktop\Robo_AVA).
+
+Apague o texto que está lá, digite cmd e aperte Enter.
+
+Uma tela preta (o terminal) irá abrir, já dentro da pasta correta.
+
+Passo 8: Instalar o Selenium
+No terminal que abriu, digite o seguinte comando e aperte Enter:
 
 pip install -r requirements.txt
-4. Baixe e posicione o ChromeDriver:
+Espere ele terminar a instalação.
 
-Verifique a versão do seu Google Chrome (Ajuda > Sobre o Google Chrome).
-
-Baixe a versão correspondente do ChromeDriver em Chrome for Testing.
-
-Descompacte o arquivo baixado.
-
-Coloque o arquivo chromedriver.exe dentro da pasta chromedrive, conforme a estrutura abaixo:
-
-/automacao_ava/
-|-- /chromedrive/
-|   |-- chromedriver.exe
-|-- /downloads/
-|-- main.py
-|-- README.md
-|-- requirements.txt
-5. Configure o main.py:
-Abra o arquivo main.py e edite as seguintes variáveis no topo do arquivo com suas informações:
-
-Python
-
-# --- CONFIGURAÇÕES ---
-LOGIN = "SEU_LOGIN_AQUI"
-SENHA = "SUA_SENHA_AQUI"
-NOME_DA_SALA = "NOME_DA_SUA_DISCIPLINA"
-NOME_DO_ARQUIVO = "nome_do_arquivo.pdf"
-# Verifique se este caminho está correto para o seu computador
-CHROMEDRIVER_PATH = r"C:\Users\aluno\Desktop\automacao_ava\chromedrive\chromedriver.exe"
-▶️ Como Usar
-Com tudo configurado, abra o terminal na pasta raiz do projeto (automacao_ava) e execute o seguinte comando:
-
-Bash
+Passo 9: Executar o Robô!
+Com tudo pronto, digite o comando abaixo no mesmo terminal e aperte Enter:
 
 python main.py
-O robô iniciará a execução. Por padrão, ele roda em modo headless (escondido). Para assistir à execução, altere a seguinte linha no final do arquivo main.py:
+O robô começará a trabalhar! Se você configurou o headless=False no script, uma janela do Chrome vai abrir. Se não, ele vai rodar em segundo plano.
 
-Python
+Passo 10: Verificar o Resultado
+Após a execução terminar, uma nova pasta chamada downloads aparecerá dentro da pasta Robo_AVA. O seu arquivo PDF estará lá dentro.
 
-# Para ver o navegador, mude para False
-driver = create_driver(headless=False)
-⚠️ Avisos Importantes
-Este script foi criado para a estrutura do site do AVA Unieuro na data de sua criação. Se o site sofrer alterações visuais ou estruturais, o robô pode parar de funcionar e precisará de ajustes nos seletores (IDs, XPaths, etc.).
-
-Suas credenciais (login e senha) ficam armazenadas em texto plano no arquivo main.py. Mantenha o arquivo em um local seguro e não o compartilhe publicamente.
+Pronto! Agora a pessoa pode rodar o robô quantas vezes quiser apenas repetindo o Passo 9. Mantenha o arquivo em um local seguro e não o compartilhe publicamente.
